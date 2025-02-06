@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Skill Tester</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/premium-vector/watercolor-back-school-background-with-school-supplies_23-2149484291.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes the background fixed */
+            color: black;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .container {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .robot-img {
+            width: 250px; /* Made the image a little bigger */
+            margin-right: 20px;
+        }
+        .btn-custom {
+            width: 200px;
+            margin: 10px;
+        }
+        .input-box {
+            width: 250px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .click-here {
+            margin-top: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background: none;
+            border: 1px solid #007bff;
+            color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .input-label {
+            font-weight: normal;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .highlight {
+            color: lightblue; /* Light blue color for "Mrs. Woods" */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://static.vecteezy.com/system/resources/previews/013/148/933/non_2x/watercolor-illustration-occupation-teacher-png.png" alt="Mrs. Woods" class="robot-img">
+        <div>
+            <h1>Hi, my name is <span class="highlight">Mrs. Woods</span>. Let's do math together!</h1>
+
+            <p></p>
+            
+            <!-- Input for 'a' -->
+            <div class="input-label">Enter a value for a:</div>
+            <input type="number" id="a" class="form-control input-box mx-auto">
+
+            <!-- Input for 'b' -->
+            <div class="input-label">Enter a value for b:</div>
+            <input type="number" id="b" class="form-control input-box mx-auto mt-2">
+            
+            <p id="instructions" style="display:none;">Enter values for a and b, then click a button to perform the corresponding mathematical operation.</p>
+
+            <div class="button-container mt-3">
+                <div class="button-row">
+                    <button type="button" class="btn btn-success btn-custom" onclick="calculateProduct()">Product of a and b</button>
+                    <button type="button" class="btn btn-warning btn-custom" onclick="calculatePower()">a raised to b</button>
+                </div>
+                <div class="button-row">
+                    <button type="button" class="btn btn-danger btn-custom" onclick="calculateRemainder()">Get the remainder</button>
+                    <button type="button" class="btn btn-info btn-custom" onclick="checkEquality()">Check if a is equal to b</button>
+                </div>
+            </div>
+
+            <!-- Click here button styled simply -->
+            <button class="click-here" onclick="showInstructions()">Click here</button>
+
+            <!-- Result shown at the bottom of the form -->
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function showInstructions() {
+            document.getElementById("instructions").style.display = "block";
+        }
+
+        function displayResult(message) {
+            document.getElementById("result").innerHTML = message;
+        }
+
+        function calculateProduct() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            displayResult("Product: " + (a * b));
+        }
+
+        function calculatePower() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var result = 1;
+
+            for (var i = 0; i < b; i++) {
+                result *= a;
+            }
+            displayResult("a raised to b: " + result);
+        }
+
+        function calculateRemainder() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            displayResult("Remainder: " + (a % b));
+        }
+
+        function checkEquality() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            displayResult(a === b ? "a is equal to b" : "a is not equal to b");
+        }
+    </script>
+</body>
+</html>
+
