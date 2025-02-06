@@ -10,7 +10,7 @@
             background-image: url('https://img.freepik.com/premium-vector/watercolor-back-school-background-with-school-supplies_23-2149484291.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Makes the background fixed */
+            background-attachment: fixed;
             color: black;
             text-align: center;
             font-family: "Times New Roman", Times, serif;
@@ -22,12 +22,12 @@
             justify-content: center;
         }
         .robot-img {
-            width: 250px; /* Made the image a little bigger */
+            width: 250px; 
             margin-right: 20px;
         }
         .btn-custom {
-            width: 200px;
-            margin: 10px;
+            width: 180px; 
+            margin: 5px; 
         }
         .input-box {
             width: 250px;
@@ -36,10 +36,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 10px;
         }
         .button-row {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; 
             width: 100%;
         }
         .result {
@@ -63,7 +64,7 @@
             margin-top: 10px;
         }
         .highlight {
-            color: lightblue; /* Light blue color for "Mrs. Woods" */
+            color: lightblue; 
         }
     </style>
 </head>
@@ -75,17 +76,15 @@
 
             <p></p>
             
-            <!-- Input for 'a' -->
             <div class="input-label">Enter a value for a:</div>
             <input type="number" id="a" class="form-control input-box mx-auto">
 
-            <!-- Input for 'b' -->
             <div class="input-label">Enter a value for b:</div>
             <input type="number" id="b" class="form-control input-box mx-auto mt-2">
             
             <p id="instructions" style="display:none;">Enter values for a and b, then click a button to perform the corresponding mathematical operation.</p>
 
-            <div class="button-container mt-3">
+            <div class="button-container">
                 <div class="button-row">
                     <button type="button" class="btn btn-success btn-custom" onclick="calculateProduct()">Product of a and b</button>
                     <button type="button" class="btn btn-warning btn-custom" onclick="calculatePower()">a raised to b</button>
@@ -96,10 +95,9 @@
                 </div>
             </div>
 
-            <!-- Click here button styled simply -->
             <button class="click-here" onclick="showInstructions()">Click here</button>
 
-            <!-- Result shown at the bottom of the form -->
+
             <div id="result" class="result"></div>
         </div>
     </div>
@@ -144,4 +142,3 @@
     </script>
 </body>
 </html>
-
